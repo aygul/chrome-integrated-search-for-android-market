@@ -1,0 +1,55 @@
+/*
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+*/
+#androidmarket_results__ {
+	border: solid 1px #7b9726;
+	background-color: #e1edb1;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+#androidmarket_results__ h3 {
+	display: block;
+}
+
+#androidmarket_results__ br {
+	clear: both;
+}
+
+#androidmarket_results__ div {
+	float: left;
+	width: 220px;
+}
+
+#androidmarket_results__ img {
+	padding: 5px;
+	float: left;
+}
+
+#androidmarket_results__ a+span {
+	font-weight: 800;
+	display: block;
+	margin-top: 5px;
+}
+
+#androidmarket_results__ a+span+span {
+	display: block;
+	font-style: italic;
+}
+
+#androidmarket_results__ a+span+span+span {
+	color: #999;
+}
