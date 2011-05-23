@@ -1,0 +1,17 @@
+{
+    "name": "Integrated Search for Android Market™",
+    "description": "Makes it easy to search and install Android™ applications", 
+    "version": "1.0",
+    "background_page": "background.html",
+    "permissions" : ["management", "http://www.google.com/*", "http://www.google.co.uk/*", "http://www.google.pt/search*", "http://www.google.ca/*", "http://www.google.nl/*", "http://www.google.fr/*", "http://www.google.de/*", "http://www.google.es/*", "http://www.google.it/*", "https://market.android.com/search"],
+    "icons": { "16": "isam16.png",
+               "48": "isam48.png",
+              "128": "isam128.png" },
+    "content_scripts": [ 
+      { 
+         "matches" : ["http://www.google.com/search*", "http://www.google.co.uk/search*", "http://www.google.pt/search*", "http://www.google.fr/search*", "http://www.google.de/search*", "http://www.google.nl/search*", "http://www.google.ca/search*", "http://www.google.es/search*", "http://www.google.it/search*"],
+         "css" : ["stuff.css"],
+         "js" : ["search.js"]
+      }
+    ] 
+}
