@@ -25,24 +25,23 @@
   });
 
 var parseAndroidMarketSearch = function(text) {
-var itemRe = new RegExp("<img src=\"([^\"]+?)\" alt=\"([^\"]+?)\"/>(.+?)<a class=\"title\" title=\"([^\"]+?)\" href=\"([^\"]+?)\">([^<]+)</a><div class=\"attribution-category\"><span class=\"attribution\"><div class=\"goog-inline-block\"><a href=\"([^\"]+?)\">([^<]+)</a>(.+?)<span class=\"category\"><a href=\"([^\"]+?)\">([^<]+)</a>", "mg");
+var itemRe = new RegExp('<a href="([^\"]+?)"(.+?)><img src="([^\"]+?)"alt="([^\"]+?)" />(.+?)<a class="title" title="([^\"]+?)"(.+?)href="([^\"]+?)">([^<]+)</a><div class="attribution-category"><span class="attribution"><div class="goog-inline-block"><a href="([^\"]+?)">([^<]+)</a>(.+?)<span class="category"><a href="([^\"]+?)">([^<]+)</a>','mg'); 
 
-  
   var output = [];
   var root = "https://market.android.com";
   var items = itemRe.exec(text);
   console.log(items);
   var parseItem = function(reResult) {
     return {
-      "img" : items[1],
-      "href": root + items[5],
-      "title" : items[2],
-      "dev_href": root + items[7],
-      "developer" : items[8],
+      "href": root + items[1],
+      "img" : items[3],
+      "title" : items[4],
+      "dev_href": root + items[10],
+      "developer" : items[11],
       "description": "",
-      "cat_href": root + items[10],
-      "category": items[11],
-      "price" : items[13]
+      "cat_href": root + items[13],
+      "category": items[14],
+      "price" : ""
     };
   };
 
@@ -54,7 +53,6 @@ var itemRe = new RegExp("<img src=\"([^\"]+?)\" alt=\"([^\"]+?)\"/>(.+?)<a class
   
   return { "results" : output }; 
 };
-
 
 var searchAndroidMarket = function(q, callback) {
   callback = callback || function(d) {};
